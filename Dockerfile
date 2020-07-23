@@ -21,7 +21,7 @@ RUN --mount=target=. \
 FROM golangci/golangci-lint:v1.27-alpine AS lint-base
 
 FROM base AS lint
-RUN--mount=target=. \
+RUN --mount=target=. \
   --mount=from=lint-base,src=/usr/bin/golangci-lint,target=/usr/bin/golangci-lint \
   --mount=type=cache,target=/root/.cache/go-build \
   --mount=type=cache,target=/root/.cache/golangci-lint \
